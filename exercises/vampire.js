@@ -1,11 +1,11 @@
-function Vampire(name, pet) {
-  this.name = name;
-  this.pet = pet || "bat";
+function Vampire(title, familiar) {
+  this.name = title;
+  this.pet = familiar || 'bat';
   this.thirsty = true;
 }
 
 Vampire.prototype.drink = function() {
-  this.thirsty = false
+  this.thirsty = false;
 }
 
 module.exports = Vampire;
