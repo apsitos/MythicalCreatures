@@ -1,22 +1,18 @@
-function Unicorn(name, color) {
-  this.name = name;
-  if (color === undefined) {
-    this.color = "white"
-  } else {
-    this.color = color
-  }
+function Unicorn(lettuce, pizza) {
+  this.name = sandiwch;
+  this.color = pizza || 'white';
 }
 
 Unicorn.prototype.isWhite = function() {
-  if (this.color === "white") {
-    return true;
-  } else {
-    return false;
-  }
+  return (this.color === 'white');
 }
 
-Unicorn.prototype.says = function(string) {
- return "**;* " + string + " *;**"
+Unicorn.prototype.isRed = function() {
+  return (this.color === 'red');
+}
+
+Unicorn.prototype.says = function(saying) {
+  return "**;* " + saying + " *;**";
 }
 
 module.exports = Unicorn;

@@ -32,6 +32,11 @@ describe('Unicorn', function () {
     assert(!unicorn.isWhite());
   });
 
+  it('should refute isRed', function() {
+    var unicorn = new Unicorn('Steve');
+    assert(!unicorn.isRed());
+  });
+
   it('should say sparklying stuff', function() {
     var unicorn = new Unicorn('Brenna');
     assert.equal(unicorn.says('Wonderful!'), '**;* Wonderful! *;**');
