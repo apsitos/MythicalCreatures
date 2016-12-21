@@ -3,41 +3,41 @@ var Centaur = require('../exercises/centaur');
 
 describe('Centaur', function () {
 
-  it.skip('should be a function', function () {
+  it('should be a function', function () {
     assert.isFunction(Centaur);
   });
 
-  it.skip('should have a name', function () {
+  it('should have a name', function () {
     var centaur = new Centaur('George');
     assert.equal(centaur.name, 'George');
   });
 
-  it.skip('should have a breed', function () {
+  it('should have a breed', function () {
     var centaur = new Centaur('George', 'Palomino');
     assert.equal(centaur.breed, 'Palomino');
   });
 
-  it.skip('should have excellent bow skills', function() {
+  it('should have excellent bow skills', function() {
     var centaur = new Centaur('George');
     assert.equal(centaur.shoot(), 'Twang!!!');
   });
 
-  it.skip('should have a horse sound when it runs', function() {
+  it('should have a horse sound when it runs', function() {
     var centaur = new Centaur('George');
     assert.equal(centaur.run(), 'Clop clop clop clop!!!');
   });
 
-  it.skip('should not be cranky when first created', function() {
+  it('should not be cranky when first created', function() {
     var centaur = new Centaur('George');
     assert(!centaur.cranky);
   });
 
-  it.skip('should be standing up when first created', function() {
+  it('should be standing up when first created', function() {
     var centaur = new Centaur('George');
     assert(centaur.standing);
   });
 
-  it.skip('should be cranky after running or shooting a bow three times', function() {
+  it('should be cranky after running or shooting a bow three times', function() {
     var centaur = new Centaur('George');
 
     assert(!centaur.cranky);
@@ -46,7 +46,7 @@ describe('Centaur', function () {
     centaur.run()
     centaur.shoot()
 
-    assert(centaur.cranky)
+    assert.equal(centaur.cranky)
   });
 
   it.skip('should not shoot when cranky', function() {
@@ -109,7 +109,7 @@ describe('Centaur', function () {
 
     assert.equal(centaur.sleep(), 'ZZZZ');
     assert.equal(centaur.cranky, false);
-    
+
     centaur.standUp();
     assert.equal(centaur.shoot(),'Twang!!!');
   });
