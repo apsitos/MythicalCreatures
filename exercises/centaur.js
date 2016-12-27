@@ -11,25 +11,26 @@ function Centaur (name, breed) {
 
 Centaur.prototype.shoot = function() {
   this.shot++;
-  if (this.shot < 3){
-    return 'Twang!!!';
-  } else if (this.shot >= 3) {
+  if (this.shot >= 3 || this.layingDown) {
     this.cranky = true;
     return 'NO!';
-  }
+  } else if (this.shot < 3){
+  return 'Twang!!!';
+  };
 }
 
 Centaur.prototype.run = function() {
   this.move++;
-  if (this.move < 3){
+  if (this.move >= 3 || this.layingDown) {
+    this.cranky = true;
+    return 'NO!';
+} else if (this.move < 3){
   return 'Clop clop clop clop!!!';
-  } else   if (this.move === 3) {
-      this.cranky = true;
   };
 }
 
 Centaur.prototype.sleep = function() {
-  return 'NO!';
+  return this.layingDown ? 'ZZZZ' : 'NO!'
 }
 
 Centaur.prototype.layDown = function() {
