@@ -3,24 +3,29 @@ function Centaur (name, breed) {
   this.breed = breed;
   this.standing = true;
   this.cranky = false;
+  this.standing = true;
   this.shot = 0;
   this.move = 0;
 }
 
 Centaur.prototype.shoot = function() {
-  ++this.shot;
-  return 'Twang!!!';
+  this.shot++;
+  if (this.shot === 3) {
+    this.cranky = true;
+    return 'NO!';
+  } else if (this.shot < 3){
+    return 'Twang!!!';
+  }
 }
 
 Centaur.prototype.run = function() {
-  ++this.move
-  return 'Clop clop clop clop!!!';
+  this.move++;
+  if (this.move === 3) {
+    this.cranky = true;
+  } else if (this.move < 3){
+    return 'Clop clop clop clop!!!';
+  };
 }
 
-if (this.shot + this.run >= 3) {
-  this.cranky = true;
-}
-
-//if (shoot().length + run().length >= 3) {this.cranky = true};
 
 module.exports = Centaur

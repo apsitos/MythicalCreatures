@@ -40,16 +40,16 @@ describe('Centaur', function () {
   it('should be cranky after running or shooting a bow three times', function() {
     var centaur = new Centaur('George');
 
-    assert(!centaur.cranky);
+    assert.equal(centaur.cranky, false);
 
-    centaur.shoot()
     centaur.run()
-    centaur.shoot()
+    centaur.run()
+    centaur.run()
 
-    assert.equal(centaur.cranky)
+    assert.equal(centaur.cranky, true)
   });
 
-  it.skip('should not shoot when cranky', function() {
+  it('should not shoot when cranky', function() {
     var centaur = new Centaur('George');
 
     for (var i = 0; i < 3; i++)  {
