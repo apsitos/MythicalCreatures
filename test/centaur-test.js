@@ -59,12 +59,12 @@ describe('Centaur', function () {
     assert.equal(centaur.shoot(), 'NO!');
   });
 
-  it.skip('should not sleep while standing', function() {
+  it('should not sleep while standing', function() {
     var centaur = new Centaur('George');
     assert.equal(centaur.sleep(), 'NO!');
   });
 
-  it.skip('after laying down it is not standing', function() {
+  it('after laying down it is not standing', function() {
     var centaur = new Centaur('George');
 
     assert(centaur.standing);
@@ -81,7 +81,7 @@ describe('Centaur', function () {
     assert(!centaur.layingDown);
   });
 
-  it.skip('should not run or shoot while laying down', function() {
+  it('should not run or shoot while laying down', function() {
     var centaur = new Centaur('George');
 
     centaur.layDown();
